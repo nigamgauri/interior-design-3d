@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-bg: #0b0e14;
+  --color-brand-surface: #1a1f26;
+  --color-brand-primary: #4fd1c5;
+  --color-brand-secondary: #9f7aea;
+  --color-brand-accent: #00d9ff;
+  
+  --font-display: 'Space Grotesk', system-ui, sans-serif;
+  --font-body: 'Manrope', system-ui, sans-serif;
+}
+
+@font-face {
+  font-family: 'Space Grotesk';
+  src: url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@600;700&display=swap');
+}
+
+@font-face {
+  font-family: 'Manrope';
+  src: url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700&display=swap');
+}
+
+:root {
+  font-family: 'Manrope', system-ui, sans-serif;
+  color-scheme: dark;
+  background-color: #0b0e14;
+  color: #e2e2e8;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #0b0e14;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+}
+
+@layer base {
+  h1, h2, h3, h4 {
+    @apply font-display tracking-tight text-white;
+  }
+}
+
+@layer utilities {
+  .glass {
+    @apply bg-white/5 backdrop-blur-xl border border-white/10;
+  }
+  
+  .glass-card {
+    @apply bg-[#1a1f26]/60 backdrop-blur-lg border border-white/5;
+  }
+  
+  .text-gradient {
+    @apply text-transparent bg-clip-text bg-gradient-to-r from-[#00d9ff] to-[#d2bbff];
+  }
+  
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-to-r from-[#00d9ff] to-[#4fd1c5] text-[#001f26] font-bold rounded-xl transition-all hover:scale-105 active:scale-95 shadow-lg shadow-brand-primary/20;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-white/5 hover:bg-white/10 text-white font-bold rounded-xl transition-all border border-white/10;
+  }
+}
